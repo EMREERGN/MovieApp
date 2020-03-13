@@ -17,15 +17,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            tools:src="@drawable/poster"
-            android:id="@+id/imageView"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="300dp">
+            <ImageView
+                tools:src="@drawable/poster"
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ImageView>
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/playBtn"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/play_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp">
+            </ImageView>
+
+        </RelativeLayout>
+
+
 
         <TextView
+            android:layout_margin="5dp"
             android:textColor="@color/textColor"
             android:id="@+id/movieNameTxt"
             android:gravity="center"

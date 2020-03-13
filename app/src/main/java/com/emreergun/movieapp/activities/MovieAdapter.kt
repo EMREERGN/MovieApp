@@ -1,4 +1,4 @@
-package com.emreergun.movieapp
+package com.emreergun.movieapp.activities
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.emreergun.movieapp.R
 import com.emreergun.movieapp.models.MovieModel
 
 interface CardClickListener{
@@ -18,6 +19,7 @@ class MoiveViewHolder(view:View):RecyclerView.ViewHolder(view){
     val context=view.context
     val image=view.findViewById<ImageView>(R.id.imageView)
     val name=view.findViewById<TextView>(R.id.movieNameTxt)
+    val playBtn=view.findViewById<ImageView>(R.id.playBtn)
 
     val container:CardView=view.findViewById(R.id.cardContainer)
 
@@ -50,7 +52,7 @@ class MovieAdapter(
 
         holder.name.text=movie.name
 
-        holder.container.setOnClickListener {
+        holder.playBtn.setOnClickListener {
             listener.onClicked(movie)
         }
 

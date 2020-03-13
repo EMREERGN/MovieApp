@@ -9,6 +9,7 @@ class SharedPrefHelper {
 
         private val PREF_KEY="Movie_App_Pref_Tag"
         private val MOVIE_LIST="Movie_List"
+        private val TRAILER_LIST="Trailer_List"
 
         fun setMovieList(context: Context,movieList: ArrayList<MovieModel>) {
             val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
@@ -21,6 +22,25 @@ class SharedPrefHelper {
         }
 
         fun getMovieList(context: Context): String? {
+            val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
+            return sharedPref.getString(MOVIE_LIST,null)
+        }
+
+
+
+
+
+        fun setTrailerList(context: Context,movieList: ArrayList<MovieModel>) {
+            val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
+            val gson=Gson()
+            val json=gson.toJson(movieList)
+            with (sharedPref.edit()) {
+                putString(MOVIE_LIST, json)
+                commit()
+            }
+        }
+
+        fun getTrailerList(context: Context): String? {
             val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
             return sharedPref.getString(MOVIE_LIST,null)
         }
