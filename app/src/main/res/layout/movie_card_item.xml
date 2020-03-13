@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-
+    android:animateLayoutChanges="true"
     android:id="@+id/cardContainer"
     app:cardBackgroundColor="@android:color/black"
     android:layout_margin="8dp"
@@ -11,6 +11,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:animateLayoutChanges="true"
         android:gravity="center"
         android:layout_margin="10dp"
         android:orientation="vertical"
@@ -21,23 +22,21 @@
             android:layout_width="match_parent"
             android:layout_height="300dp">
             <ImageView
+                android:layout_centerInParent="true"
                 tools:src="@drawable/poster"
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </ImageView>
-
             <ImageView
                 android:id="@+id/playBtn"
                 android:layout_centerInParent="true"
-                tools:src="@drawable/play_icon"
+                android:src="@drawable/play_icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp">
             </ImageView>
 
         </RelativeLayout>
-
-
 
         <TextView
             android:layout_margin="5dp"
@@ -49,6 +48,20 @@
             android:layout_height="match_parent">
 
         </TextView>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/trailerDescTxt"
+            android:gravity="center"
+            android:padding="25dp"
+            android:textColor="@color/trailerDescTextColor"
+            tools:text="Based on Disneyland's theme park ride where a small riverboat takes a group of travelers through a jungle filled with dangerous animals and reptiles but with a supernatural element."
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TextView>
+
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

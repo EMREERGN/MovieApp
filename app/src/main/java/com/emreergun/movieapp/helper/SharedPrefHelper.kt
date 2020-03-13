@@ -11,7 +11,7 @@ class SharedPrefHelper {
         private val MOVIE_LIST="Movie_List"
         private val TRAILER_LIST="Trailer_List"
 
-        fun setMovieList(context: Context,movieList: ArrayList<MovieModel>) {
+        fun setPosterList(context: Context, movieList: ArrayList<MovieModel>) {
             val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
             val gson=Gson()
             val json=gson.toJson(movieList)
@@ -21,7 +21,7 @@ class SharedPrefHelper {
             }
         }
 
-        fun getMovieList(context: Context): String? {
+        fun getPosterList(context: Context): String? {
             val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
             return sharedPref.getString(MOVIE_LIST,null)
         }
@@ -35,14 +35,14 @@ class SharedPrefHelper {
             val gson=Gson()
             val json=gson.toJson(movieList)
             with (sharedPref.edit()) {
-                putString(MOVIE_LIST, json)
+                putString(TRAILER_LIST, json)
                 commit()
             }
         }
 
         fun getTrailerList(context: Context): String? {
             val sharedPref = context.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
-            return sharedPref.getString(MOVIE_LIST,null)
+            return sharedPref.getString(TRAILER_LIST,null)
         }
 
     }

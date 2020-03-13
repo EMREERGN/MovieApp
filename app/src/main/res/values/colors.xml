@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#000</color>
     <color name="textColor">#e0e0e0</color>
+    <color name="trailerTextColor">#c66900</color>
+    <color name="trailerDescTextColor">#82b3c9</color>
+
 </resources>

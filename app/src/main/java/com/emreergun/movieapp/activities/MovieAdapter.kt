@@ -20,6 +20,7 @@ class MoiveViewHolder(view:View):RecyclerView.ViewHolder(view){
     val image=view.findViewById<ImageView>(R.id.imageView)
     val name=view.findViewById<TextView>(R.id.movieNameTxt)
     val playBtn=view.findViewById<ImageView>(R.id.playBtn)
+    val descTxt=view.findViewById<TextView>(R.id.trailerDescTxt)
 
     val container:CardView=view.findViewById(R.id.cardContainer)
 
@@ -46,6 +47,12 @@ class MovieAdapter(
 
         val movie=movieList[position]
 
+        if (movie.trailerLink==null){
+            holder.playBtn.visibility=View.GONE
+        }
+
+        holder.descTxt.text=movie.description
+
         Glide.with(holder.context)
             .load(movie.imageUrl)
             .into(holder.image)
@@ -54,6 +61,17 @@ class MovieAdapter(
 
         holder.playBtn.setOnClickListener {
             listener.onClicked(movie)
+        }
+
+        holder.container.setOnClickListener {
+            when(holder.descTxt.visibility){
+                View.GONE->{
+                    holder.descTxt.visibility=View.VISIBLE
+                }
+                View.VISIBLE->{
+                    holder.descTxt.visibility=View.GONE
+                }
+            }
         }
 
 
