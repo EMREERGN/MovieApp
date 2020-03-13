@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:background="@android:color/black"
+    android:padding="16dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Test">
+    tools:context=".activities.search.Test">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#424242"
+        android:elevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/searchEdtText"
+                android:textColor="@android:color/white"
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+            </EditText>
+
+            <ImageView
+                android:id="@+id/searchImage"
+                android:padding="10dp"
+                android:src="@drawable/ic_search"
+                android:layout_alignParentRight="true"
+                android:layout_height="45dp"
+                android:layout_width="50dp">
+            </ImageView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRecyclerView"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

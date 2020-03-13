@@ -1,4 +1,4 @@
-package com.emreergun.movieapp.activities
+package com.emreergun.movieapp.activities.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.emreergun.movieapp.R
 import com.emreergun.movieapp.TrailerBottomSheetFragment
-import com.emreergun.movieapp.helper.Repository
 import com.emreergun.movieapp.helper.SharedPrefHelper
 import com.emreergun.movieapp.models.MovieModel
 import com.google.gson.Gson
@@ -21,9 +20,9 @@ import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity() {
     lateinit var bottomSheet:TrailerBottomSheetFragment
-    lateinit var movieAdapter:MovieAdapter
+    lateinit var movieAdapter: MovieAdapter
 
-    lateinit var homeViewModel:HomeViewModel
+    lateinit var homeViewModel: HomeViewModel
 
     companion object{
         const val TAG="MainActivity"
@@ -70,7 +69,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateRecyclerView(list: ArrayList<MovieModel>) {
-        movieAdapter = MovieAdapter(list, movieContainerClickListener)
+        movieAdapter = MovieAdapter(
+            list,
+            movieContainerClickListener
+        )
         recyclerVeiw.adapter = movieAdapter
         recyclerVeiw.adapter?.notifyDataSetChanged()
 

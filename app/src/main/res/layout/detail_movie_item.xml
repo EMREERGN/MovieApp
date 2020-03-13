@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/searchedCardContainer"
+    app:cardBackgroundColor="@android:color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:background="@android:color/black"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:padding="16dp"
+            android:background="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <ImageView
+                android:id="@+id/searchPoster"
+                android:src="@drawable/poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ImageView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/searchMovieName"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/trailerDescTextColor"
+            tools:text="Movie Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/movieReleaseDateSearched"
+            android:gravity="center"
+            android:textColor="@color/trailerTextColor"
+            tools:text=" 21 December 2001 (Turkey)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

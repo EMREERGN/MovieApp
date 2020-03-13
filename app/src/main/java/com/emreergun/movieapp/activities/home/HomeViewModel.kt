@@ -1,4 +1,4 @@
-package com.emreergun.movieapp.activities
+package com.emreergun.movieapp.activities.home
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

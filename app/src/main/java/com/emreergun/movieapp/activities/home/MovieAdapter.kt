@@ -1,4 +1,4 @@
-package com.emreergun.movieapp.activities
+package com.emreergun.movieapp.activities.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -51,7 +51,6 @@ class MovieAdapter(
             holder.playBtn.visibility=View.GONE
         }
 
-        holder.descTxt.text=movie.description
 
         Glide.with(holder.context)
             .load(movie.imageUrl)

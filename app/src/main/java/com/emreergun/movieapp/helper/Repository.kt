@@ -4,7 +4,6 @@ import android.os.AsyncTask
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.emreergun.movieapp.activities.MainActivity
 import com.emreergun.movieapp.models.MovieModel
 import org.jsoup.Jsoup
 
@@ -51,7 +50,7 @@ class Repository {
                 val movieImageUrl=it.getElementsByTag("img").attr("srcset").toString().split(", ")[2]
                 //val movieDetail =doc.getElementsByAttribute("aria-label").attr("href").toString()
                 //Log.i("Poster_Info","movie deatail :$movieDetail")
-                movieList.add(MovieModel(movieName,movieImageUrl,null,null))
+                movieList.add(MovieModel(movieName,movieImageUrl,null,null,null,null,null,null,null,null))
             }
             return null
         }
@@ -99,7 +98,7 @@ class Repository {
                     .attr("href")
                     .toString()
 
-                val movie=MovieModel(movieName,movieImageUrl,movieTrailerUrl,movieDescription)
+                val movie=MovieModel(movieName,movieImageUrl,movieTrailerUrl,movieDescription,null,null,null,null,null,null)
                 movieList.add(movie)
             }
             return null
