@@ -17,4 +17,13 @@
         android:title="Favorite Movies">
     </item>
 
+    <item
+        android:id="@+id/main_menu_search_movie"
+        android:iconTint="@android:color/white"
+        android:icon="@android:drawable/btn_star"
+        app:showAsAction="always"
+        android:title="Search Movies">
+    </item>
+
+
 </menu>

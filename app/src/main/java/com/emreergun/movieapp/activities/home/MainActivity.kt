@@ -1,5 +1,6 @@
 package com.emreergun.movieapp.activities.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,10 +14,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.emreergun.movieapp.R
 import com.emreergun.movieapp.TrailerBottomSheetFragment
+import com.emreergun.movieapp.activities.search.Test
 import com.emreergun.movieapp.helper.SharedPrefHelper
 import com.emreergun.movieapp.models.MovieModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var bottomSheet:TrailerBottomSheetFragment
@@ -61,6 +64,13 @@ class MainActivity : AppCompatActivity() {
 
         //getTrailer()
         getPosters()
+
+
+        fabBtn.setOnClickListener {
+            SharedPrefHelper.setPosterList(this@MainActivity, null)
+            SharedPrefHelper.setTrailerList(this@MainActivity, null)
+        }
+
 
 
 
@@ -131,6 +141,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Posters",Toast.LENGTH_SHORT).show()
 
                 getPosters()
+            }
+            R.id.main_menu_search_movie->{
+                val intent=Intent(this,Test::class.java)
+                startActivity(intent)
             }
         }
         return true

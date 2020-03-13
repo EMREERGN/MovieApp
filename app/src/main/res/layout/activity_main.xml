@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@android:color/black"
@@ -20,4 +20,17 @@
     </androidx.recyclerview.widget.RecyclerView>
 
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewMain"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,7 +62,6 @@ class Test : AppCompatActivity() {
             adapter=movieAdapter
         }
 
-
         searchImage.setOnClickListener {
             if(searchEdt.text.isNotEmpty()) // Boş değil ise
             {
@@ -177,7 +176,7 @@ private class  MySearchTask(val searchString:String,val listener:Test.AsyncListe
             onProgressUpdate(movie)
 
 
-            Log.i(TAG, "movieName : $name\nsummary : $summary ")
+
 
         }
         return null
